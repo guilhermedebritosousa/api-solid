@@ -17,7 +17,7 @@ jobs:
           POSTGRESQL_PASSWORD: docker
           POSTGRESQL_DATABASE: apisolid
         options: >-
-          --health-cmd pg_isready
+          --health-cmd "/opt/bitnami/postgresql/bin/pg_isready -U docker -d apisolid"
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
