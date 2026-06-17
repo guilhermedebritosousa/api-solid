@@ -1,0 +1,60 @@
+{
+	"name": "03---solid",
+	"version": "1.0.0",
+	"description": "Gympass style app.",
+	"main": "index.js",
+	"scripts": {
+		"dev": "tsx watch src/server.ts",
+		"start": "node build/server.cjs",
+		"build": "tsup src --out-dir build",
+		"format": "npx @biomejs/biome format --write",
+		"lint": "npx @biomejs/biome lint --write",
+		"check": "npx @biomejs/biome check --write",
+		"test:unit": "vitest run --project unit",
+		"test:e2e": "vitest run --project e2e",
+		"test:unit:watch": "vitest --project unit",
+		"test:e2e:watch": "vitest --project e2e",
+		"test:coverage": "vitest run --coverage",
+		"test:ui": "vitest --ui"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"type": "module",
+	"imports": {
+		"#/*": "./build/*.cjs"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.4.16",
+		"@types/node": "25.6.0",
+		"@types/pg": "8.20.0",
+		"@types/supertest": "7.2.0",
+		"@vitest/coverage-v8": "4.1.6",
+		"@vitest/ui": "4.1.6",
+		"prisma": "7.8.0",
+		"supertest": "7.2.2",
+		"tsup": "8.5.1",
+		"tsx": "4.22.4",
+		"typescript": "6.0.3",
+		"vite": "8.0.16",
+		"vitest": "4.1.6"
+	},
+	"dependencies": {
+		"@fastify/cookie": "11.0.2",
+		"@fastify/jwt": "10.1.0",
+		"@prisma/adapter-pg": "7.8.0",
+		"@prisma/client": "7.8.0",
+		"@types/bcryptjs": "2.4.6",
+		"bcryptjs": "3.0.3",
+		"dayjs": "1.11.20",
+		"dotenv": "17.4.2",
+		"fastify": "5.8.5",
+		"pg": "8.20.0",
+		"zod": "4.4.3"
+	},
+	"overrides": {
+		"esbuild": "^0.28.1",
+		"hono": "^4.12.21",
+		"@hono/node-server": "^1.19.13"
+	}
+}
